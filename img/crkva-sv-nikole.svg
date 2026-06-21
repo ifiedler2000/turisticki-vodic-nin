@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Ilustracija crkve svetog Nikole na humku u Prahuljama">
+  <defs>
+    <linearGradient id="poz6" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cfe7ef"/>
+      <stop offset="100%" stop-color="#ece0c8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#poz6)"/>
+  <!-- humak -->
+  <ellipse cx="400" cy="560" rx="360" ry="120" fill="#9bbf7a"/>
+  <ellipse cx="400" cy="540" rx="240" ry="90" fill="#86ad65"/>
+  <!-- crkvica -->
+  <g fill="#c66a45">
+    <rect x="350" y="300" width="100" height="120" rx="6"/>
+    <path d="M350 300 q 50 -60 100 0 Z"/>
+    <rect x="345" y="250" width="110" height="56" rx="28" fill="#c66a45"/>
+  </g>
+  <rect x="390" y="350" width="20" height="70" fill="#f6efe2"/>
+  <text x="400" y="500" font-family="Poppins, Arial, sans-serif" font-size="32" font-weight="600" fill="#a8512f" text-anchor="middle">Crkva sv. Nikole</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Ilustracija Muzeja ninskih starina">
+  <defs>
+    <linearGradient id="poz5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f6efe2"/>
+      <stop offset="100%" stop-color="#ece0c8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#poz5)"/>
+  <!-- antički hram -->
+  <g fill="#1d6f8b">
+    <path d="M250 220 L400 150 L550 220 Z"/>
+    <rect x="250" y="220" width="300" height="24"/>
+    <rect x="270" y="244" width="28" height="160"/>
+    <rect x="340" y="244" width="28" height="160"/>
+    <rect x="410" y="244" width="28" height="160"/>
+    <rect x="480" y="244" width="28" height="160"/>
+    <rect x="240" y="404" width="320" height="26"/>
+  </g>
+  <text x="400" y="510" font-family="Poppins, Arial, sans-serif" font-size="32" font-weight="600" fill="#14536a" text-anchor="middle">Muzej ninskih starina</text>
+</svg>

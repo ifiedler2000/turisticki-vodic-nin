@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Praktične informacije | Nin - turistički vodič</title>
+  <meta name="description" content="Praktične informacije za posjet Ninu: mogućnosti prijevoza iz Zadra (auto, autobus, bicikl, brod), savjeti o smještaju i korisni kontakti za turiste.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Praktične informacije | Nin - turistički vodič">
+  <meta property="og:description" content="Kako doći do Nina, gdje odsjesti i koje kontakte imati pri ruci. Pretraživa tablica prijevoza.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nin-vodic.netlify.app/info.html">
+  <meta property="og:image" content="img/hero-nin.svg">
+  <meta property="og:locale" content="hr_HR">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Analytics 4 -->
+  <!-- Zamijeni G-XXXXXXXXXX svojim GA4 Measurement ID-om -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="preskoci-link" href="#glavni-sadrzaj">Preskoči na sadržaj</a>
+
+  <header class="zaglavlje">
+    <div class="sadrzaj zaglavlje__sadrzaj">
+      <a class="logo" href="index.html">
+        <span class="logo__znak" aria-hidden="true">N</span>
+        Nin vodič
+      </a>
+      <button class="nav-prekidac" type="button" aria-expanded="false" aria-controls="glavna-navigacija">
+        Izbornik
+      </button>
+      <nav class="glavna-navigacija" id="glavna-navigacija" aria-label="Glavna navigacija">
+        <ul>
+          <li><a href="index.html">Naslovnica</a></li>
+          <li><a href="atrakcije.html">Atrakcije</a></li>
+          <li><a href="info.html" class="active" aria-current="page">Informacije</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="glavni-sadrzaj">
+    <section class="sekcija">
+      <div class="sadrzaj">
+        <h1>Praktične informacije</h1>
+        <p class="uvodni-tekst">
+          Nin se nalazi nedaleko od Zadra, pa je lako dostupan na više načina.
+          U nastavku pronađite mogućnosti prijevoza, savjete o smještaju i
+          korisne kontakte.
+        </p>
+
+        <h2 class="sekcija__naslov">Prijevoz do Nina</h2>
+        <div class="tablica-filter">
+          <label for="filter-prijevoz">Prikaži vrstu prijevoza:</label>
+          <select id="filter-prijevoz" data-filter-prijevoz>
+            <option value="sve">Sve vrste</option>
+            <option value="auto">Auto</option>
+            <option value="autobus">Autobus</option>
+            <option value="bicikl">Bicikl</option>
+            <option value="brod">Brod / taxi</option>
+          </select>
+        </div>
+
+        <div class="tablica-omot">
+          <table class="tablica">
+            <caption>Okvirne mogućnosti dolaska u Nin iz Zadra.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Vrsta prijevoza</th>
+                <th scope="col">Polazište</th>
+                <th scope="col">Trajanje (okvirno)</th>
+                <th scope="col">Napomena</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-vrsta="auto">
+                <th scope="row">Auto</th>
+                <td>Zadar</td>
+                <td>oko 20 min</td>
+                <td>Udaljenost Zadar–Nin oko 17 km; parkiranje uz staru jezgru.</td>
+              </tr>
+              <tr data-vrsta="autobus">
+                <th scope="row">Autobus</th>
+                <td>Zadar (autobusni kolodvor)</td>
+                <td>oko 30–40 min</td>
+                <td>Lokalna linija Zadar–Nin; provjerite vozni red kod prijevoznika.</td>
+              </tr>
+              <tr data-vrsta="bicikl">
+                <th scope="row">Bicikl</th>
+                <td>Zadar / okolica</td>
+                <td>oko 60–90 min</td>
+                <td>Biciklističke staze i ceste kroz ravničarsko zaleđe.</td>
+              </tr>
+              <tr data-vrsta="brod">
+                <th scope="row">Brod / taxi</th>
+                <td>Po dogovoru</td>
+                <td>ovisno o ruti</td>
+                <td>Prijevoz morem ili taxi uslugom po dogovoru s prijevoznikom.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="sekcija sekcija--usko" aria-labelledby="info-naslov">
+      <div class="sadrzaj">
+        <h2 id="info-naslov" class="sekcija__naslov">Smještaj i kontakti</h2>
+        <div class="info-mreza">
+          <article class="info-kartica">
+            <h3>Smještaj</h3>
+            <p>
+              U Ninu i okolici dostupne su različite vrste smještaja prilagođene
+              raznim potrebama:
+            </p>
+            <ul>
+              <li>Privatni apartmani i sobe u staroj jezgri i obližnjim mjestima</li>
+              <li>Kampovi uz obalu, blizu plaža</li>
+              <li>Manji obiteljski hoteli i pansioni</li>
+            </ul>
+          </article>
+
+          <article class="info-kartica">
+            <h3>Korisni kontakti</h3>
+            <p>Pri ruci je dobro imati sljedeće kontakte:</p>
+            <ul>
+              <li>Turistička zajednica grada Nina (turistički informativni centar)</li>
+              <li>Jedinstveni broj za hitne službe: 112</li>
+              <li>Hitna medicinska pomoć: 194</li>
+              <li>Policija: 192</li>
+            </ul>
+          </article>
+
+          <article class="info-kartica">
+            <h3>Savjeti za posjet</h3>
+            <ul>
+              <li>Stara jezgra najljepša je za razgled pješice.</li>
+              <li>Za plažu i peloid ponesite zaštitu od sunca i vodu.</li>
+              <li>Provjerite radno vrijeme muzeja i solana prije dolaska.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="podnozje">
+    <div class="sadrzaj podnozje__sadrzaj">
+      <div>
+        <h3>Nin vodič</h3>
+        <p>Turistički vodič za povijesni grad Nin kraj Zadra.</p>
+      </div>
+      <nav aria-label="Podnožje navigacija">
+        <h3>Stranice</h3>
+        <ul>
+          <li><a href="index.html">Naslovnica</a></li>
+          <li><a href="atrakcije.html">Atrakcije</a></li>
+          <li><a href="info.html">Informacije</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="podnozje__copy">
+      <div class="sadrzaj">
+        &copy; <span data-godina>2026</span> Nin vodič — Ivana Fiedler. Studentski projekt.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

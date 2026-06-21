@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nin - turistički vodič | Naslovnica</title>
+  <meta name="description" content="Otkrijte Nin, povijesni kraljevski grad kraj Zadra: predromaničke crkve, solane, pješčane plaže i ljekoviti peloid. Vaš vodič kroz atrakcije i praktične informacije.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nin - turistički vodič | Naslovnica">
+  <meta property="og:description" content="Otkrijte Nin, povijesni kraljevski grad kraj Zadra: crkve, solane, plaže i ljekoviti peloid.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nin-vodic.netlify.app/index.html">
+  <meta property="og:image" content="img/hero-nin.svg">
+  <meta property="og:locale" content="hr_HR">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Analytics 4 -->
+  <!-- Zamijeni G-XXXXXXXXXX svojim GA4 Measurement ID-om -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="preskoci-link" href="#glavni-sadrzaj">Preskoči na sadržaj</a>
+
+  <header class="zaglavlje">
+    <div class="sadrzaj zaglavlje__sadrzaj">
+      <a class="logo" href="index.html">
+        <span class="logo__znak" aria-hidden="true">N</span>
+        Nin vodič
+      </a>
+      <button class="nav-prekidac" type="button" aria-expanded="false" aria-controls="glavna-navigacija">
+        Izbornik
+      </button>
+      <nav class="glavna-navigacija" id="glavna-navigacija" aria-label="Glavna navigacija">
+        <ul>
+          <li><a href="index.html" class="active" aria-current="page">Naslovnica</a></li>
+          <li><a href="atrakcije.html">Atrakcije</a></li>
+          <li><a href="info.html">Informacije</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="glavni-sadrzaj">
+    <section class="hero" aria-labelledby="hero-naslov">
+      <div class="sadrzaj hero__sadrzaj">
+        <h1 id="hero-naslov">Nin - povijesni kraljevski grad</h1>
+        <p>
+          Smješten na malenom otočiću u plitkoj laguni nedaleko od Zadra, Nin
+          spaja bogatu hrvatsku povijest, predromaničku arhitekturu i mirne
+          pješčane plaže. Otkrijte njegove znamenitosti i isplanirajte svoj posjet.
+        </p>
+        <div class="hero__cta">
+          <a class="gumb gumb--primarni" href="atrakcije.html">Pogledaj atrakcije</a>
+          <a class="gumb gumb--sekundarni" href="info.html">Praktične informacije</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sekcija">
+      <div class="sadrzaj">
+        <h2 class="sekcija__naslov">Dobrodošli u Nin</h2>
+        <p class="uvodni-tekst">
+          Nin se ubraja među najstarije gradove na hrvatskoj obali i nekoć je
+          bio važno političko i vjersko središte. Danas privlači posjetitelje
+          spojem kulturne baštine i prirode: od predromaničke crkve sv. Križa,
+          preko tradicijske proizvodnje soli u ninskim solanama, do duge
+          pješčane Kraljičine plaže i ljekovitog peloida u laguni.
+        </p>
+      </div>
+    </section>
+
+    <section class="sekcija sekcija--usko" aria-labelledby="teaseri-naslov">
+      <div class="sadrzaj">
+        <h2 id="teaseri-naslov" class="sekcija__naslov">Što vas očekuje</h2>
+        <div class="teaseri">
+          <article class="teaser">
+            <h3>Atrakcije i znamenitosti</h3>
+            <p>
+              Pregledajte crkve, muzej, solane i plaže te filtrirajte ih po
+              kategoriji: priroda, kultura ili gastronomija.
+            </p>
+            <a href="atrakcije.html">Pogledaj atrakcije &rarr;</a>
+          </article>
+
+          <article class="teaser">
+            <h3>Praktične informacije</h3>
+            <p>
+              Kako doći do Nina, gdje odsjesti i koje kontakte imati pri ruci -
+              sve na jednom mjestu, s pretraživom tablicom prijevoza.
+            </p>
+            <a href="info.html">Otvori informacije &rarr;</a>
+          </article>
+
+          <article class="teaser">
+            <h3>Kontakt i upiti</h3>
+            <p>
+              Imate pitanje o posjetu Ninu? Pošaljite nam upit putem
+              jednostavnog kontakt obrasca.
+            </p>
+            <a href="kontakt.html">Pošalji upit &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="podnozje">
+    <div class="sadrzaj podnozje__sadrzaj">
+      <div>
+        <h3>Nin vodič</h3>
+        <p>Turistički vodič za povijesni grad Nin kraj Zadra.</p>
+      </div>
+      <nav aria-label="Podnožje navigacija">
+        <h3>Stranice</h3>
+        <ul>
+          <li><a href="index.html">Naslovnica</a></li>
+          <li><a href="atrakcije.html">Atrakcije</a></li>
+          <li><a href="info.html">Informacije</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="podnozje__copy">
+      <div class="sadrzaj">
+        &copy; <span data-godina>2026</span> Nin vodič — Ivana Fiedler. Studentski projekt.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

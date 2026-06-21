@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kontakt | Nin - turistički vodič</title>
+  <meta name="description" content="Pošaljite upit o posjetu Ninu putem kontakt obrasca. Postavite pitanje o atrakcijama, prijevozu ili smještaju i javit ćemo vam se uskoro.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Kontakt | Nin - turistički vodič">
+  <meta property="og:description" content="Pošaljite nam upit o posjetu Ninu putem jednostavnog kontakt obrasca.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nin-vodic.netlify.app/kontakt.html">
+  <meta property="og:image" content="img/hero-nin.svg">
+  <meta property="og:locale" content="hr_HR">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Analytics 4 -->
+  <!-- Zamijeni G-XXXXXXXXXX svojim GA4 Measurement ID-om -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="preskoci-link" href="#glavni-sadrzaj">Preskoči na sadržaj</a>
+
+  <header class="zaglavlje">
+    <div class="sadrzaj zaglavlje__sadrzaj">
+      <a class="logo" href="index.html">
+        <span class="logo__znak" aria-hidden="true">N</span>
+        Nin vodič
+      </a>
+      <button class="nav-prekidac" type="button" aria-expanded="false" aria-controls="glavna-navigacija">
+        Izbornik
+      </button>
+      <nav class="glavna-navigacija" id="glavna-navigacija" aria-label="Glavna navigacija">
+        <ul>
+          <li><a href="index.html">Naslovnica</a></li>
+          <li><a href="atrakcije.html">Atrakcije</a></li>
+          <li><a href="info.html">Informacije</a></li>
+          <li><a href="kontakt.html" class="active" aria-current="page">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="glavni-sadrzaj">
+    <section class="sekcija">
+      <div class="sadrzaj">
+        <h1>Kontakt</h1>
+        <p class="uvodni-tekst">
+          Imate pitanje o atrakcijama, prijevozu ili smještaju u Ninu? Ispunite
+          obrazac i poslat ćemo vam odgovor. Polja označena zvjezdicom
+          (<span aria-hidden="true">*</span>) su obavezna.
+        </p>
+
+        <div class="kontakt-raspored">
+          <div>
+            <h2 class="sekcija__naslov">Pošaljite upit</h2>
+            <form class="forma" data-kontakt-forma novalidate>
+              <div class="polje">
+                <label for="ime">Ime i prezime <span class="obavezno" aria-hidden="true">*</span></label>
+                <input type="text" id="ime" name="ime" autocomplete="name" required aria-required="true" aria-describedby="greska-ime">
+                <span class="poruka-greske" id="greska-ime" data-greska role="alert"></span>
+              </div>
+
+              <div class="polje">
+                <label for="email">E-mail adresa <span class="obavezno" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" autocomplete="email" required aria-required="true" aria-describedby="greska-email">
+                <span class="poruka-greske" id="greska-email" data-greska role="alert"></span>
+              </div>
+
+              <div class="polje">
+                <label for="tema">Tema upita <span class="obavezno" aria-hidden="true">*</span></label>
+                <select id="tema" name="tema" required aria-required="true" aria-describedby="greska-tema">
+                  <option value="">Odaberite temu</option>
+                  <option value="atrakcije">Atrakcije i razgledavanje</option>
+                  <option value="prijevoz">Prijevoz</option>
+                  <option value="smjestaj">Smještaj</option>
+                  <option value="ostalo">Ostalo</option>
+                </select>
+                <span class="poruka-greske" id="greska-tema" data-greska role="alert"></span>
+              </div>
+
+              <div class="polje">
+                <label for="poruka">Poruka <span class="obavezno" aria-hidden="true">*</span></label>
+                <textarea id="poruka" name="poruka" required aria-required="true" aria-describedby="greska-poruka"></textarea>
+                <span class="poruka-greske" id="greska-poruka" data-greska role="alert"></span>
+              </div>
+
+              <button type="submit" class="gumb gumb--primarni">Pošalji upit</button>
+
+              <p class="forma-status" data-forma-status role="status" aria-live="polite" tabindex="-1" hidden></p>
+            </form>
+          </div>
+
+          <aside class="kontakt-info" aria-label="Dodatni kontakt podaci">
+            <h2>Drugi načini kontakta</h2>
+            <p>
+              Za hitne informacije obratite se turističkom informativnom centru
+              grada Nina.
+            </p>
+            <address>
+              <p>
+                <strong>Nin vodič (studentski projekt)</strong><br>
+                Nin, Zadarska županija, Hrvatska
+              </p>
+              <p>
+                E-mail: <a href="mailto:info@nin-vodic.example">info@nin-vodic.example</a>
+              </p>
+            </address>
+            <p>
+              Napomena: ovo je demonstracijska stranica izrađena u okviru
+              studentskog projekta.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="podnozje">
+    <div class="sadrzaj podnozje__sadrzaj">
+      <div>
+        <h3>Nin vodič</h3>
+        <p>Turistički vodič za povijesni grad Nin kraj Zadra.</p>
+      </div>
+      <nav aria-label="Podnožje navigacija">
+        <h3>Stranice</h3>
+        <ul>
+          <li><a href="index.html">Naslovnica</a></li>
+          <li><a href="atrakcije.html">Atrakcije</a></li>
+          <li><a href="info.html">Informacije</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="podnozje__copy">
+      <div class="sadrzaj">
+        &copy; <span data-godina>2026</span> Nin vodič — Ivana Fiedler. Studentski projekt.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

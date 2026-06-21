@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Atrakcije u Ninu | Nin - turistički vodič</title>
+  <meta name="description" content="Pregled atrakcija u Ninu: crkva sv. Križa, ninske solane, Kraljičina plaža, ljekoviti peloid, muzej i crkva sv. Nikole. Filtrirajte po kategoriji priroda, kultura i gastronomija.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Atrakcije u Ninu | Nin - turistički vodič">
+  <meta property="og:description" content="Crkve, solane, plaže i muzej u Ninu. Filtrirajte atrakcije po kategoriji: priroda, kultura, gastronomija.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nin-vodic.netlify.app/atrakcije.html">
+  <meta property="og:image" content="img/crkva-sv-kriza.svg">
+  <meta property="og:locale" content="hr_HR">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Analytics 4 -->
+  <!-- Zamijeni G-XXXXXXXXXX svojim GA4 Measurement ID-om -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="preskoci-link" href="#glavni-sadrzaj">Preskoči na sadržaj</a>
+
+  <header class="zaglavlje">
+    <div class="sadrzaj zaglavlje__sadrzaj">
+      <a class="logo" href="index.html">
+        <span class="logo__znak" aria-hidden="true">N</span>
+        Nin vodič
+      </a>
+      <button class="nav-prekidac" type="button" aria-expanded="false" aria-controls="glavna-navigacija">
+        Izbornik
+      </button>
+      <nav class="glavna-navigacija" id="glavna-navigacija" aria-label="Glavna navigacija">
+        <ul>
+          <li><a href="index.html">Naslovnica</a></li>
+          <li><a href="atrakcije.html" class="active" aria-current="page">Atrakcije</a></li>
+          <li><a href="info.html">Informacije</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="glavni-sadrzaj">
+    <section class="sekcija">
+      <div class="sadrzaj">
+        <h1>Atrakcije u Ninu</h1>
+        <p class="uvodni-tekst">
+          Nin nudi spoj kulturne baštine i prirode na malom prostoru. Odaberite
+          kategoriju kako biste prikazali atrakcije koje vas zanimaju.
+        </p>
+
+        <h2 class="sekcija__naslov">Filtriraj po kategoriji</h2>
+        <div class="filteri" data-filteri-atrakcije role="group" aria-label="Filtriranje atrakcija po kategoriji">
+          <button type="button" class="filter-gumb" data-filter="sve" aria-pressed="true">Sve</button>
+          <button type="button" class="filter-gumb" data-filter="priroda" aria-pressed="false">Priroda</button>
+          <button type="button" class="filter-gumb" data-filter="kultura" aria-pressed="false">Kultura</button>
+          <button type="button" class="filter-gumb" data-filter="gastronomija" aria-pressed="false">Gastronomija</button>
+        </div>
+
+        <p class="nema-rezultata" data-nema-rezultata hidden>
+          Nema atrakcija u odabranoj kategoriji.
+        </p>
+
+        <div class="kartice">
+          <article class="kartica" data-kategorija="kultura">
+            <img class="kartica__slika" src="img/crkva-sv-kriza.svg" alt="Predromanička crkva svetog Križa bijele boje s malim zvonikom u Ninu" width="800" height="600">
+            <div class="kartica__tijelo">
+              <span class="kartica__oznaka">Kultura</span>
+              <h3>Crkva sv. Križa</h3>
+              <p class="kartica__opis">
+                Predromanička crkva iz 9. stoljeća, poznata kao "najmanja
+                katedrala na svijetu". Jedan je od simbola Nina.
+              </p>
+            </div>
+          </article>
+
+          <article class="kartica" data-kategorija="kultura priroda">
+            <img class="kartica__slika" src="img/solana.svg" alt="Bazeni ninske solane s hrpom morske soli" width="800" height="600">
+            <div class="kartica__tijelo">
+              <span class="kartica__oznaka">Kultura i priroda</span>
+              <h3>Ninske solane</h3>
+              <p class="kartica__opis">
+                Proizvodnja soli tradicijskim postupkom isparavanjem morske vode.
+                Uz solane djeluje i muzej soli.
+              </p>
+            </div>
+          </article>
+
+          <article class="kartica" data-kategorija="priroda">
+            <img class="kartica__slika" src="img/kraljicina-plaza.svg" alt="Pješčana Kraljičina plaža s plitkim morem kod Nina" width="800" height="600">
+            <div class="kartica__tijelo">
+              <span class="kartica__oznaka">Priroda</span>
+              <h3>Kraljičina plaža</h3>
+              <p class="kartica__opis">
+                Duga pješčana plaža kod Nina s plitkim morem, pogodna za obitelji
+                i šetnje uz obalu.
+              </p>
+            </div>
+          </article>
+
+          <article class="kartica" data-kategorija="priroda">
+            <img class="kartica__slika" src="img/peloid.svg" alt="Tamno ljekovito blato peloid u ninskoj laguni" width="800" height="600">
+            <div class="kartica__tijelo">
+              <span class="kartica__oznaka">Priroda</span>
+              <h3>Ljekoviti peloid (mulj)</h3>
+              <p class="kartica__opis">
+                Ljekovito blato iz ninske lagune koje se tradicionalno koristi u
+                wellness i zdravstvene svrhe.
+              </p>
+            </div>
+          </article>
+
+          <article class="kartica" data-kategorija="kultura">
+            <img class="kartica__slika" src="img/muzej.svg" alt="Stiliziran prikaz antičkog hrama koji predstavlja Muzej ninskih starina" width="800" height="600">
+            <div class="kartica__tijelo">
+              <span class="kartica__oznaka">Kultura</span>
+              <h3>Muzej ninskih starina</h3>
+              <p class="kartica__opis">
+                Arheološka zbirka s nalazima iz antike i srednjeg vijeka koji
+                svjedoče o dugoj povijesti grada.
+              </p>
+            </div>
+          </article>
+
+          <article class="kartica" data-kategorija="kultura">
+            <img class="kartica__slika" src="img/crkva-sv-nikole.svg" alt="Romanička crkva svetog Nikole na zelenom humku u Prahuljama kraj Nina" width="800" height="600">
+            <div class="kartica__tijelo">
+              <span class="kartica__oznaka">Kultura</span>
+              <h3>Crkva sv. Nikole (Prahulje)</h3>
+              <p class="kartica__opis">
+                Romanička crkva na humku blizu Nina, povezana s tradicijom
+                krunidbi hrvatskih kraljeva.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="podnozje">
+    <div class="sadrzaj podnozje__sadrzaj">
+      <div>
+        <h3>Nin vodič</h3>
+        <p>Turistički vodič za povijesni grad Nin kraj Zadra.</p>
+      </div>
+      <nav aria-label="Podnožje navigacija">
+        <h3>Stranice</h3>
+        <ul>
+          <li><a href="index.html">Naslovnica</a></li>
+          <li><a href="atrakcije.html">Atrakcije</a></li>
+          <li><a href="info.html">Informacije</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="podnozje__copy">
+      <div class="sadrzaj">
+        &copy; <span data-godina>2026</span> Nin vodič — Ivana Fiedler. Studentski projekt.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
