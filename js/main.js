@@ -66,7 +66,7 @@
     });
   }
 
-  // validacija kontakt forme
+  // validacija i Netlify AJAX slanje kontakt forme
   function kontaktForma() {
     var forma = document.querySelector("[data-kontakt-forma]");
     if (!forma) return;
@@ -152,13 +152,35 @@
         return;
       }
 
-      forma.reset();
-      if (status) {
-        status.textContent = "Hvala! Vaš upit je uspješno zaprimljen. Javit ćemo vam se uskoro.";
-        status.className = "forma-status forma-status--uspjeh";
-        status.hidden = false;
-        status.focus();
-      }
+      // Slanje forme na Netlify koristeći Fetch API
+      var formData = new FormData(forma);
+      
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+        .then(function (response) {
+          if (response.ok) {
+            forma.reset();
+            if (status) {
+              status.textContent = "Hvala! Vaš upit je uspješno zaprimljen. Javit ćemo vam se uskoro.";
+              status.className = "forma-status forma-status--uspjeh";
+              status.hidden = false;
+              status.focus();
+            }
+          } else {
+            throw new Error("Mrežna greška.");
+          }
+        })
+        .catch(function (error) {
+          if (status) {
+            status.textContent = "Došlo je do greške prilikom slanja. Molimo pokušajte ponovno.";
+            status.className = "forma-status forma-status--greska";
+            status.hidden = false;
+            status.focus();
+          }
+        });
     });
   }
 
