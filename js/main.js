@@ -1,30 +1,19 @@
-/* ==========================================================================
-   Nin - turistički vodič | main.js
-   Jedna zajednička skripta uključena na svim stranicama (defer).
-   Svaka funkcionalnost zaštićena je provjerom postojanja elemenata,
-   tako da nema greški u konzoli na stranicama gdje elementi ne postoje.
-   ========================================================================== */
 (function () {
   "use strict";
 
   document.addEventListener("DOMContentLoaded", function () {
-    inicijalizirajMobilnuNavigaciju();
-    inicijalizirajFilterAtrakcija();
-    inicijalizirajFilterTablice();
-    inicijalizirajKontaktFormu();
-    postaviGodinu();
+    mobilniIzbornik();
+    filterAtrakcija();
+    filterTablice();
+    kontaktForma();
+    godinaUPodnozju();
   });
 
-  /* ----------------------------------------------------------------------
-     Mobilna navigacija (hamburger) - prisutna na svim stranicama
-     ---------------------------------------------------------------------- */
-  function inicijalizirajMobilnuNavigaciju() {
+  // hamburger izbornik na mobitelu
+  function mobilniIzbornik() {
     var prekidac = document.querySelector(".nav-prekidac");
     var navigacija = document.querySelector(".glavna-navigacija");
-
-    if (!prekidac || !navigacija) {
-      return;
-    }
+    if (!prekidac || !navigacija) return;
 
     prekidac.addEventListener("click", function () {
       var otvorena = navigacija.classList.toggle("otvorena");
@@ -32,62 +21,41 @@
     });
   }
 
-  /* ----------------------------------------------------------------------
-     atrakcije.html - filtriranje kartica po kategoriji (data- atributi)
-     ---------------------------------------------------------------------- */
-  function inicijalizirajFilterAtrakcija() {
+  // filtriranje kartica atrakcija po kategoriji
+  function filterAtrakcija() {
     var filteri = document.querySelector("[data-filteri-atrakcije]");
     var kartice = document.querySelectorAll("[data-kategorija]");
-
-    if (!filteri || kartice.length === 0) {
-      return;
-    }
+    if (!filteri || kartice.length === 0) return;
 
     var gumbi = filteri.querySelectorAll(".filter-gumb");
     var poruka = document.querySelector("[data-nema-rezultata]");
 
-    filteri.addEventListener("click", function (dogadaj) {
-      var gumb = dogadaj.target.closest(".filter-gumb");
-      if (!gumb) {
-        return;
-      }
+    filteri.addEventListener("click", function (e) {
+      var gumb = e.target.closest(".filter-gumb");
+      if (!gumb) return;
 
       var odabrana = gumb.getAttribute("data-filter");
-
-      // Označi aktivni gumb (aria-pressed)
       gumbi.forEach(function (g) {
         g.setAttribute("aria-pressed", g === gumb ? "true" : "false");
       });
 
-      // Prikaži / sakrij kartice
       var vidljivih = 0;
       kartice.forEach(function (kartica) {
         var kategorija = kartica.getAttribute("data-kategorija");
-        var prikazi =
-          odabrana === "sve" || kategorija.indexOf(odabrana) !== -1;
+        var prikazi = odabrana === "sve" || kategorija.indexOf(odabrana) !== -1;
         kartica.hidden = !prikazi;
-        if (prikazi) {
-          vidljivih++;
-        }
+        if (prikazi) vidljivih++;
       });
 
-      // Poruka kad nema rezultata
-      if (poruka) {
-        poruka.hidden = vidljivih !== 0;
-      }
+      if (poruka) poruka.hidden = vidljivih !== 0;
     });
   }
 
-  /* ----------------------------------------------------------------------
-     info.html - filtriranje redova tablice po vrsti prijevoza (dropdown)
-     ---------------------------------------------------------------------- */
-  function inicijalizirajFilterTablice() {
+  // filtriranje tablice prijevoza (info.html)
+  function filterTablice() {
     var odabir = document.querySelector("[data-filter-prijevoz]");
     var redovi = document.querySelectorAll("[data-vrsta]");
-
-    if (!odabir || redovi.length === 0) {
-      return;
-    }
+    if (!odabir || redovi.length === 0) return;
 
     odabir.addEventListener("change", function () {
       var vrijednost = odabir.value;
@@ -98,20 +66,12 @@
     });
   }
 
-  /* ----------------------------------------------------------------------
-     kontakt.html - JS validacija forme (inline poruke + uspjeh)
-     ---------------------------------------------------------------------- */
-  function inicijalizirajKontaktFormu() {
+  // validacija kontakt forme
+  function kontaktForma() {
     var forma = document.querySelector("[data-kontakt-forma]");
-    if (!forma) {
-      return;
-    }
+    if (!forma) return;
 
     var status = forma.querySelector("[data-forma-status]");
-
-    // Isključi nativne mjehuriće da koristimo vlastite poruke,
-    // ali zadržimo HTML5 atribute (required, type) za logiku.
-    forma.setAttribute("novalidate", "novalidate");
 
     var pravila = {
       ime: function (v) {
@@ -121,8 +81,8 @@
       },
       email: function (v) {
         if (!v.trim()) return "Molimo unesite e-mail adresu.";
-        var uzorak = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!uzorak.test(v.trim())) return "Unesite ispravnu e-mail adresu.";
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()))
+          return "Unesite ispravnu e-mail adresu.";
         return "";
       },
       tema: function (v) {
@@ -131,22 +91,18 @@
       },
       poruka: function (v) {
         if (!v.trim()) return "Molimo upišite poruku.";
-        if (v.trim().length < 10)
-          return "Poruka mora imati barem 10 znakova.";
+        if (v.trim().length < 10) return "Poruka mora imati barem 10 znakova.";
         return "";
       }
     };
 
     function provjeriPolje(polje) {
       var pravilo = pravila[polje.name];
-      if (!pravilo) {
-        return true;
-      }
+      if (!pravilo) return true;
+
       var greska = pravilo(polje.value);
       var omot = polje.closest(".polje");
-      var poljeGreske = omot
-        ? omot.querySelector(".poruka-greske")
-        : null;
+      var poljeGreske = omot ? omot.querySelector(".poruka-greske") : null;
 
       if (greska) {
         if (omot) omot.classList.add("polje--greska");
@@ -161,24 +117,20 @@
       return true;
     }
 
-    // Validacija prilikom napuštanja polja
     Object.keys(pravila).forEach(function (ime) {
       var polje = forma.elements[ime];
-      if (polje) {
-        polje.addEventListener("blur", function () {
-          provjeriPolje(polje);
-        });
-        polje.addEventListener("input", function () {
-          var omot = polje.closest(".polje");
-          if (omot && omot.classList.contains("polje--greska")) {
-            provjeriPolje(polje);
-          }
-        });
-      }
+      if (!polje) return;
+      polje.addEventListener("blur", function () {
+        provjeriPolje(polje);
+      });
+      polje.addEventListener("input", function () {
+        var omot = polje.closest(".polje");
+        if (omot && omot.classList.contains("polje--greska")) provjeriPolje(polje);
+      });
     });
 
-    forma.addEventListener("submit", function (dogadaj) {
-      dogadaj.preventDefault();
+    forma.addEventListener("submit", function (e) {
+      e.preventDefault();
       var sveValjano = true;
       var prvoNeispravno = null;
 
@@ -186,30 +138,23 @@
         var polje = forma.elements[ime];
         if (polje && !provjeriPolje(polje)) {
           sveValjano = false;
-          if (!prvoNeispravno) {
-            prvoNeispravno = polje;
-          }
+          if (!prvoNeispravno) prvoNeispravno = polje;
         }
       });
 
       if (!sveValjano) {
         if (status) {
-          status.textContent =
-            "Obrazac sadrži pogreške. Molimo provjerite označena polja.";
+          status.textContent = "Obrazac sadrži pogreške. Molimo provjerite označena polja.";
           status.className = "forma-status forma-status--greska";
           status.hidden = false;
         }
-        if (prvoNeispravno) {
-          prvoNeispravno.focus();
-        }
+        if (prvoNeispravno) prvoNeispravno.focus();
         return;
       }
 
-      // Uspjeh (statička stranica - ne šaljemo stvarno)
       forma.reset();
       if (status) {
-        status.textContent =
-          "Hvala! Vaš upit je uspješno zaprimljen. Javit ćemo vam se uskoro.";
+        status.textContent = "Hvala! Vaš upit je uspješno zaprimljen. Javit ćemo vam se uskoro.";
         status.className = "forma-status forma-status--uspjeh";
         status.hidden = false;
         status.focus();
@@ -217,16 +162,10 @@
     });
   }
 
-  /* ----------------------------------------------------------------------
-     Godina u podnožju (prisutno na svim stranicama)
-     ---------------------------------------------------------------------- */
-  function postaviGodinu() {
-    var elementi = document.querySelectorAll("[data-godina]");
-    if (elementi.length === 0) {
-      return;
-    }
+  // godina u podnožju
+  function godinaUPodnozju() {
     var godina = new Date().getFullYear();
-    elementi.forEach(function (el) {
+    document.querySelectorAll("[data-godina]").forEach(function (el) {
       el.textContent = String(godina);
     });
   }

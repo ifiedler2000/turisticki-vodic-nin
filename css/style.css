@@ -1,7 +1,4 @@
-/* ==========================================================================
-   Nin - turistički vodič | style.css
-   Topla mediteranska paleta: pijesak/terakota + jadransko plavetnilo
-   ========================================================================== */
+/* Nin - turistički vodič — stilovi */
 
 /* ---------- Tokeni (CSS varijable) ---------- */
 :root {
@@ -42,6 +39,11 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+/* hidden mora sakriti element i kad ima display:flex (kartice) */
+[hidden] {
+  display: none !important;
 }
 
 html {
@@ -273,7 +275,7 @@ main {
       rgba(20, 83, 106, 0.75),
       rgba(20, 83, 106, 0.25)
     ),
-    url("../img/hero-nin.svg");
+    url("../img/hero-nin.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -418,6 +420,10 @@ main {
   color: var(--boja-tekst-prigusen);
   font-style: italic;
 }
+
+.izvori-foto { margin-top: var(--razmak-xxl); }
+.izvori-foto ul { color: var(--boja-tekst-prigusen); padding-left: 1.2rem; margin: 0; }
+.izvori-foto li { margin-bottom: var(--razmak-xs); }
 
 /* ---------- Tablica prijevoza ---------- */
 .tablica-omot {
@@ -654,9 +660,7 @@ main {
   color: var(--boja-pijesak-tamna);
 }
 
-/* ==========================================================================
-   Responzivnost
-   ========================================================================== */
+/* Responzivnost */
 @media (max-width: 760px) {
   .nav-prekidac {
     display: inline-block;

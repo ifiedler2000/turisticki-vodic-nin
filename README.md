@@ -27,23 +27,29 @@ https://nin-vodic.netlify.app
 ## Struktura projekta
 
 ```
-projekt/
+projekt-ivana/
   index.html
   atrakcije.html
   info.html
   kontakt.html
   css/style.css
   js/main.js
-  img/                (SVG placeholder slike)
+  img/                (fotografije)
   README.md
   .gitignore
 ```
 
-## Slike
+## Slike i izvori fotografija
 
-Sve slike su SVG placeholderi u boji palete stranice (`img/`). Mogu se zamijeniti
-pravim fotografijama Nina - dovoljno je zadržati ista imena datoteka ili
-ažurirati `src` atribute u HTML-u i pripadajući `alt` opis.
+Fotografije su stvarne slike Nina preuzete s Wikimedia Commonsa, uz navođenje
+autora i licence (popis je i na stranici Atrakcije):
+
+- Stara jezgra Nina (naslovnica) — Amphisbène, CC BY 2.5
+- Crkva sv. Križa — Paula Borkovic, CC BY-SA 4.0
+- Kraljičina plaža — Przemek Pietrak, CC BY-SA 3.0
+- Ninska laguna — Magdalena Miočev, CC BY-SA 4.0
+- Gornja vrata — Pudelek (Marcin Szala), CC BY-SA 3.0
+- Crkva sv. Nikole — Paula Borkovic, CC BY-SA 4.0
 
 ## Kako pokrenuti (lokalno)
 
@@ -57,10 +63,10 @@ Projekt je statičan, pa nije potreban poslužitelj ni instalacija:
 ## Kako deployati na Netlify
 
 1. Prijavi se na [Netlify](https://www.netlify.com/).
-2. **Add new site -> Deploy manually** i povuci mapu `projekt/` u prozor, ili
+2. **Add new site -> Deploy manually** i povuci mapu `projekt-ivana/` u prozor, ili
    poveži Git repozitorij (**Import from Git**).
 3. Kako se radi o statičnoj stranici, **build command** ostaje prazan, a
-   **publish directory** postavi na korijen projekta (`projekt/` ili `.`).
+   **publish directory** postavi na korijen projekta (`projekt-ivana/` ili `.`).
 4. Nakon deploya zamijeni placeholder `G-XXXXXXXXXX` u `<head>` svake HTML
    datoteke svojim stvarnim GA4 Measurement ID-om.
 
